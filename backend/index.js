@@ -8,7 +8,7 @@ const portfolioRoute = require("./routes/portfolioRoute");
 
 app.use(express.json());
 
-app.use("/api/portfolio", portfolioRoute);
+app.use("/api", portfolioRoute);
 
 
 app.listen(port, () => {

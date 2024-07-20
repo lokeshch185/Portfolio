@@ -90,19 +90,11 @@ const contactSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  gender: {
-    type: String,
-    required: true,
-  },
   email: {
     type: String,
     required: true,
   },
   mobile: {
-    type: String,
-    required: true,
-  },
-  age: {
     type: String,
     required: true,
   },
@@ -133,6 +125,28 @@ const positionsSchema = new mongoose.Schema({
   
 });
 
+const socialSchema = new mongoose.Schema({
+  leetcode: {
+    type: String,
+    required: false,
+  },
+  linkedin: {
+    type: String,
+    required: false,
+  },
+  github: {
+    type: String,
+    required: false,
+  },
+  codeforces: {
+    type: String,
+    required: false,
+  },
+  instagram: {
+    type: String,
+    required: false,
+  },
+});
 
 module.exports = {
   Intro: mongoose.model("intros", introSchema),
@@ -141,4 +155,5 @@ module.exports = {
   Project: mongoose.model("projects", projectsSchema),
   Contact: mongoose.model("contacts", contactSchema),
   Position : mongoose.model("positions", positionsSchema),
+  Social : mongoose.model("social", socialSchema),
 };

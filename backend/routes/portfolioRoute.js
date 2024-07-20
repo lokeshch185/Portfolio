@@ -1,271 +1,51 @@
-const router = require("express").Router();
+const express = require('express');
+const router = express.Router();
 
-const {
-  Intro,
-  About,
-  Project,
-  Contact,
-  Experience,
-  Position,
-} = require("../models/portfolioModel");
+const { getProfileData } = require('../controllers/profileController');
+const { updateIntro } = require('../controllers/introController');
+const { updateAbout } = require('../controllers/aboutController');
+const { addExperience, updateExperience, deleteExperience } = require('../controllers/experienceController');
+const { addProject, updateProject, deleteProject } = require('../controllers/projectController');
+const { addPosition, updatePosition, deletePosition } = require('../controllers/positionController');
+const { updateContact } = require('../controllers/contactController');
+const { adminLogin } = require('../controllers/authController');
+const { getLeetcodeData } = require('../controllers/leetcodeController');
+const {getCodeforcesData} = require('../controllers/codeforcesController');
 
-const User = require("../models/userModel");
+// Get all portfolio data
+router.get('/get-portfolio-data', getProfileData);
 
+// Get LeetCode data
+router.get('/get-leetcode-data', getLeetcodeData);
 
-// get all portfolio data
-router.get("/get-portfolio-data", async (req, res) => {
-  try {
-  
-    const intros = await Intro.find();
-    const abouts = await About.find();
-    const projects = await Project.find();
-    const contacts = await Contact.find();
-    const experiences = await Experience.find();
-    const positions = await Position.find();
+// Get Codeforces data
+router.get('/get-codeforces-data',getCodeforcesData);
 
- 
+// Intro routes
+router.post('/update-intro', updateIntro);
 
+// About routes
+router.post('/update-about', updateAbout);
 
-    res.status(200).send({
-      intro: intros[0],
-      about: abouts[0],
-      projects: projects,
-      contact: contacts[0],
-      experiences: experiences,
-      positions : positions,
-      
-    }
-    
-  );
-  } catch (error) {
-    res.status(500).send(error);
-  } 
-});
+// Experience routes
+router.post('/add-experience', addExperience);
+router.post('/update-experience', updateExperience);
+router.post('/delete-experience', deleteExperience);
 
-// update intro
-router.post("/update-intro", async (req, res) => {
-  try {
-    const intro = await Intro.findOneAndUpdate(
-      { _id: req.body._id },
-      req.body,
-      { new: true }
-    );
-    res.status(200).send({
-      data: intro,
-      success: true,
-      message: "Intro updated successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+// Project routes
+router.post('/add-project', addProject);
+router.post('/update-project', updateProject);
+router.post('/delete-project', deleteProject);
 
-// update about
-router.post("/update-about", async (req, res) => {
-  try {
-    const about = await About.findOneAndUpdate(
-      { _id: req.body._id },
-      req.body,
-      { new: true }
-    );
-    res.status(200).send({
-      data: about,
-      success: true,
-      message: "Abouts updated successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+// Position routes
+router.post('/add-position', addPosition);
+router.post('/update-position', updatePosition);
+router.post('/delete-position', deletePosition);
 
-// add experience
+// Contact routes
+router.post('/update-contact', updateContact);
 
-router.post("/add-experience", async (req, res) => {
-  try {
-    const experience = new Experience(req.body);
-    await experience.save();
-    res.status(200).send({
-      data: experience,
-      success: true,
-      message: "Experience added successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+// Admin login
+router.post('/admin-login', adminLogin);
 
-// update experience
-router.post("/update-experience", async (req, res) => {
-  try {
-    const experience = await Experience.findOneAndUpdate(
-      { _id: req.body._id },
-      req.body,
-      { new: true }
-    );
-    res.status(200).send({
-      data: experience,
-      success: true,
-      message: "Experience updated successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-// delete experience
-router.post("/delete-experience", async (req, res) => {
-  try {
-    const experience = await Experience.findOneAndDelete({ _id: req.body._id });
-    res.status(200).send({
-      data: experience,
-      success: true,
-      message: "Experience deleted successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-
-// add project
-router.post("/add-project", async (req, res) => {
-  try {
-    const project = new Project(req.body);
-    await project.save();
-    res.status(200).send({
-      data: project,
-      success: true,
-      message: "Project added successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-// update project
-router.post("/update-project", async (req, res) => {
-  try {
-    const project = await Project.findOneAndUpdate(
-      { _id: req.body._id },
-      req.body,
-      { new: true }
-    );
-    res.status(200).send({
-      data: project,
-      success: true,
-      message: "Project updated successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-// delete project
-
-router.post("/delete-project", async (req, res) => {
-  try {
-    const project = await Project.findOneAndDelete({ _id: req.body._id });
-    res.status(200).send({
-      data: project,
-      success: true,
-      message: "Project deleted successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-
-// add position
-
-router.post("/add-position", async (req, res) => {
-  try {
-    const positions = new Position(req.body);
-    await positions.save();
-    res.status(200).send({
-      data: positions,
-      success: true,
-      message: " Position added successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-// update position
-router.post("/update-position", async (req, res) => {
-  try {
-    const positions = await Position.findOneAndUpdate(
-      { _id: req.body._id },
-      req.body,
-      { new: true }
-    );
-    res.status(200).send({
-      data: positions,
-      success: true,
-      message: " Position updated successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-// delete position
-router.post("/delete-position", async (req, res) => {
-  try {
-    const positions = await Position.findOneAndDelete({ _id: req.body._id });
-    res.status(200).send({
-      data: positions,
-      success: true,
-      message: " Position deleted successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-
-// update contact
-router.post("/update-contact", async (req, res) => {
-  try {
-    const contact = await Contact.findOneAndUpdate(
-      { _id: req.body._id },
-      req.body,
-      { new: true }
-    );
-    res.status(200).send({
-      data: contact,
-      success: true,
-      message: "Contact updated successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-// admin login
-router.post("/admin-login", async (req, res) => {
-  try {
-    const user = await User.findOne({
-      username: req.body.username,
-      password: req.body.password,
-    });
-    user.password = "";
-    if (user) {
-      res.status(200).send({
-        data: user,
-        success: true,
-        message: "Login successfully",
-      });
-    } else {
-      res.status(200).send({
-        data: user,
-        success: false,
-        message: "Invalid username or password",
-      });
-    }
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
 module.exports = router;
