@@ -1,63 +1,73 @@
 let timelineElements = [
     {
       id: 1,
-      title: "Frontend Developer",
-      location: "Dragontail, Ascana",
+      title: "Software Engineer",
+      location: "Tech Valley, Siliconia",
       description:
-        "Converting data to a graphical interface, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that data.",
-      buttonText: "View Frontend Projects",
-      date: "August 2016 - present",
+        "Developing and maintaining web applications, collaborating with cross-functional teams to deliver high-quality software solutions.",
+      buttonText: "View Software Projects",
+      date: "January 2018 - present",
       icon: "work",
     },
     {
       id: 2,
-      title: "Backend Developer",
-      location: "Skystead, Craonia",
+      title: "Data Scientist",
+      location: "Data City, Numidia",
       description:
-        "Working hand-in-hand with front-end developers by providing the outward facing web application elements server-side logic. Creating the logic to make the web app function properly, and accomplishing this through the use of server-side scripting languages.",
-      buttonText: "View Backend Projects",
-      date: "June 2013 - August 2016",
+        "Analyzing complex data sets to derive actionable insights, using statistical techniques and machine learning algorithms.",
+      buttonText: "View Data Projects",
+      date: "March 2015 - December 2017",
       icon: "work",
     },
     {
       id: 3,
-      title: "Quality Assurance Engineer",
-      location: "South Warren, Geshington",
+      title: "Project Manager",
+      location: "Capital Town, Republica",
       description:
-        "Assessing the quality of specifications and technical design documents in order to ensure timely, relevant and meaningful feedback.",
+        "Overseeing project timelines, ensuring deliverables are met within scope and budget, and managing team communication.",
       buttonText: "Company Website",
-      date: "September 2011 - June 2013",
+      date: "July 2012 - February 2015",
       icon: "work",
     },
     {
       id: 4,
-      title: "Oak Ridge College",
-      location: "South Warren, Geshington",
+      title: "Master's in Computer Science",
+      location: "Innovate University, Educatia",
       description:
-        "Online Course in Magical Beasts and Wonders of the World - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      buttonText: "Course Certificate",
-      date: "September 2011",
+        "Completed a Master's program focusing on advanced algorithms, data structures, and machine learning techniques.",
+      buttonText: "View Thesis",
+      date: "September 2010 - June 2012",
       icon: "school",
     },
     {
       id: 5,
-      title: "Hawking College",
-      location: "Skystead, Craonia",
+      title: "Bachelor's in Information Technology",
+      location: "Tech State College, Informatica",
       description:
-        "College - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      buttonText: "College Projects",
-      date: "2007 - 2011",
+        "Studied various aspects of IT including software development, networking, and database management.",
+      buttonText: "View Projects",
+      date: "September 2006 - June 2010",
       icon: "school",
     },
     {
       id: 6,
-      title: "Marble Hills Grammar School",
-      location: "Dragontail, Ascana",
+      title: "Greenwood High School",
+      location: "Greenwood, Naturia",
       description:
-        "Highschool - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sagittis tellus, non ultrices lacus tempus vel.",
-      date: "2003 - 2007",
+        "High school education with a focus on science and mathematics, participated in various tech-related extracurricular activities.",
+      date: "September 2002 - June 2006",
+      icon: "school",
+    },
+    {
+      id: 7,
+      title: "Greenwood High School",
+      location: "Greenwood, Naturia",
+      description:
+        "High school education with a focus on science and mathematics, participated in various tech-related extracurricular activities.",
+      date: "September 2002 - June 2006",
       icon: "school",
     },
   ];
   
   export default timelineElements;
+  
