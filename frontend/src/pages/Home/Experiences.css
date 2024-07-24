@@ -1,0 +1,8 @@
+
+  
+  /* Style for the location text */
+  .vertical-timeline-element h2 {
+    font-size: 0.875rem; /* Equivalent to text-sm in Tailwind */
+    color: #607d8b; /* Change to your desired color */
+  }
+  
