@@ -5,8 +5,8 @@
       "description1": "This website was build to streamline the process of managing college report ",
       
       "description2": "This website was build to streamline the process of managing college report ",
-      "link": "https://iic.spit.ac.in",
-      "technology": ["react","node"]
+      "link": "https://iic.spit.ac.in/",
+      "technology": ["react","node","react","node","react","node","react","node","react","node"]
     
 
     },
@@ -15,9 +15,9 @@
         "heading": "IIC Website",
         "description1": "This website was build to streamline the process of managing college report ",
       
-      "description2": "This website was build to streamline the process of managing college reports ",
+      "description2": "I developed the offical website of the IIC, SPIT which facilitates efficient management of administrative reports. It has advanced functionalities such as generating report, report verification, report analysis and some other administration related functions that optimize the workflow. ",
       
-        "link": "https://iic.spit.ac.in",
+        "link": "https://iic.spit.ac.in/",
         "technology": ["react","node"]
   
       },{
@@ -27,7 +27,7 @@
       
       "description2": "This website was build to streamline the process of managing college report ",
       
-        "link": "https://iic.spit.ac.in",
+        "link": "https://iic.spit.ac.in/",
         "technology": ["react","node"]
   
       },{
@@ -37,7 +37,7 @@
       
       "description2": "This website was build to streamline the process of managing college report ",
       
-        "link": "https://iic.spit.ac.in",
+        "link": "https://iic.spit.ac.in/",
         "technology": ["react","node"]
   
       }]

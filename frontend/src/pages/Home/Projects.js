@@ -11,15 +11,19 @@ const Card = ({ image, heading, description1, onClick, link }) => (
             <h2 className="font-bold text-lg mb-2">{heading}</h2>
             <p className="text-sm text-gray-600">{description1}</p>
         </div>
-        <div className="m-2">
+        <div className="m-2 ">
             <a
                 role="button"
-                href={{link}}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white px-3 py-1 block w-20 text-center hover:bg-purple-900 rounded-md bg-purple-700"
             >
                 Visit
             </a>
+
         </div>
+
     </div>
 );
 
@@ -28,24 +32,45 @@ const Projects = () => {
 
     return (
         <div className="bg-slate-300 w-full h-screen flex">
-            <div className="flex flex-col w-1/2 sm:w-full sm:mt-10 sm:text-center justify-center items-center px-10">
+            <div className="  flex flex-col w-1/2 sm:hidden sm:mt-10 sm:text-center justify-center  ">
                 {selectedElement && (
-                    <div className="text-gray-800">
-                        <img className="h-44 object-cover mb-8 mx-auto p-0" src={selectedElement.image} alt="" />
-                        <h1 className="text-3xl font-bold">{selectedElement.heading}</h1>
-                    
-                        <p className="text-sm mt-10">{selectedElement.description1}</p>
-                        <p className="text-sm mt-10">{selectedElement.description2}</p>
-                        <div className="mt-10 flex justify-start">
-                                {selectedElement.technology.map((tech, index) => (
-                                    <span
-                                        key={index}
-                                        className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300"
+                    <div className='bg-white p-8 rounded-r-md ml-0 shadow-lg hover:shadow-2xl hover:bg-gray-200 cursor-pointer'>
+                    <div className="text-gray-80">
+                        <div className="flex items-center">
+                            <img className="h-44  mb-8 mx-auto p-0 rounded-md" src={selectedElement.image} alt="" />
+                            <div className="ml-8 mb-8 m">
+                                <h1 className="text-3xl font-bold">{selectedElement.heading}</h1>
+                                <p className="text-sm mt-2">{selectedElement.description1}</p>
+                                
+                                <div className="mt-4 ">
+                                    <a
+                                        role="button"
+                                        href={selectedElement.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white px-3 py-1 block w-20 text-center hover:bg-purple-900 rounded-md bg-purple-700"
                                     >
-                                        {tech}
-                                    </span>
-                                ))}
+                                        Visit
+                                    </a>
+
+                                </div>
+
                             </div>
+                        </div>
+
+
+                        <p className="text-sm mt-10">{selectedElement.description2}</p>
+                        <div className="mt-10 flex justify-center">
+                            {selectedElement.technology.map((tech, index) => (
+                                <span
+                                    key={index}
+                                    className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                     </div>
                 )}
             </div>
@@ -67,6 +92,7 @@ const Projects = () => {
                             onClick={() => setSelectedElement(item)}
                         />
                     ))}
+
                 </div>
             </div>
         </div>
