@@ -21,6 +21,7 @@ function Navbar() {
                     <a href="#about" className="text-white hover:text-gray-300  hover:scale-105 inline-block transform duration-200" >About</a>
                     <a href="#experiences" className="text-white hover:text-gray-300  hover:scale-105 inline-block transform duration-200" >Experiences</a>
                     <a href="#projects" className="text-white hover:text-gray-300  hover:scale-105 inline-block transform duration-200" >Projects</a>
+                    <a href="#testimonials" className="text-white hover:text-gray-300  hover:scale-105 inline-block transform duration-200" >Testimonials</a>
                     <a href="#stats" className="text-white hover:text-gray-300  hover:scale-105 inline-block transform duration-200" >Stats</a>
                 </div>
                 <div className="hidden sm:block ">

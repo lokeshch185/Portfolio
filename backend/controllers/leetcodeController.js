@@ -16,6 +16,12 @@ const getLeetcodeData = async (req, res) => {
 
     const query = `
     {
+
+    problems: allQuestionsCount { 
+            difficulty 
+            count 
+        }
+
       matchedUser(username: "${leetcodeUsername}") {
         username
         submitStats: submitStatsGlobal {
@@ -23,7 +29,7 @@ const getLeetcodeData = async (req, res) => {
             difficulty
             count
             submissions
-            total
+            
           }
         }
       }
@@ -41,7 +47,7 @@ const getLeetcodeData = async (req, res) => {
     const data = await response.json();
 
     res.status(200).send({
-      data: data,
+      data: data.data,
       success: true,
       message: "LeetCode data fetched successfully.",
     });

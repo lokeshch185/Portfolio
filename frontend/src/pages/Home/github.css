@@ -1,0 +1,6 @@
+.slick-track {
+    margin:auto;
+}
+.slick-slide > div {
+    margin: 10px;
+}

@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import About from './pages/Home/About';
 import Experiences from './pages/Home/Experiences';
 import Projects from './pages/Home/Projects';
+import Testimonials from './pages/Home/Testimonials';
+import Stats from './pages/Home/Stats';
 function App() {
   return (
     <div className=" no-scrollbar h-screen overflow-auto scroll-smooth ">
@@ -20,6 +22,12 @@ function App() {
       </section>
       <section id='projects'>
         <Projects/>
+      </section>
+      <section id='testimonials'>
+        <Testimonials/>
+      </section>
+      <section id='stats'>
+        <Stats/>
       </section>
     </div>
   );
