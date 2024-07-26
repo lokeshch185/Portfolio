@@ -48,10 +48,10 @@ const Github = () => {
     };
 
     const Card = ({ heading, description, link }) => (
-        <div className="bg-white transform  p-2 duration-300 shadow-lg hover:shadow-2xl hover:scale-105 cursor-pointer h-48 ">
+        <div className="bg-[#354763] transform  p-2 duration-300 shadow-lg hover:shadow-2xl hover:scale-105 cursor-pointer h-48 ">
             <div className="p-4">
-                <h2 className="font-bold text-lg mb-2">{heading}</h2>
-                <p className="text-sm text-gray-600">{description}</p>
+                <h2 className="font-bold text-lg mb-2 text-white ">{heading}</h2>
+                <p className="text-sm text-slate-100">{description}</p>
             </div>
             <div className=" px-4 ">
                 <a
@@ -68,20 +68,9 @@ const Github = () => {
 
     return (
         <div className="flex flex-col items-center max-h-screen px-4">
-            <div className="w-full mb-8">
-                <div className="scale-75 flex justify-center items-center">
-                    <GitHubCalendar
-                        username={username}
-                        year={2024}
-                        colorScheme="light"
-                        labels={{
-                            totalCount: '{{count}} contributions in the last year',
-                        }}
-                    />
-                </div>
-            </div>
+
             <div className="mx-auto  md:w-2/3 lg:w-1/2">
-                <h3 className="text-2xl mb-4 text-center">Repositories</h3>
+                {/* <h3 className="text-2xl mb-4 text-center">Repositories</h3> */}
                 <Slider {...settings}>
                     {repos.map((item) => (
                         <div key={item.id} className="">
@@ -99,6 +88,27 @@ const Github = () => {
                         </div>
                     ))}
                 </Slider>
+            </div>
+
+            <div className="w-full mb-8">
+                <div className="scale-90 flex justify-center items-center m-11">
+                    <GitHubCalendar
+                        username={username}
+                        year={2024}
+                        colorScheme="light"
+                        theme={{
+                            light: ['#ebedf0', '#8cc665', '#44a340', '#1e6823', '#0f4913'],
+                            dark: ['#333', '#39d353'],
+                            text: '#ffffff',
+
+                          }}
+                          style={{color:'white'}}
+                        
+                        labels={{
+                            totalCount: '{{count}} contributions in the last year',
+                        }}
+                    />
+                </div>
             </div>
 
         </div>
