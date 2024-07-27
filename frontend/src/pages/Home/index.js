@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Intro from './Intro';
 import Navbar from '../../components/Navbar';
 import About from './About';
@@ -5,28 +6,58 @@ import Experiences from './Experiences';
 import Projects from './Projects';
 import Stats from './Stats';
 import ContactMe from './Contact';
+
 function Home() {
+  const [portfolioData, setPortfolioData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/get-portfolio-data');
+        const data = await response.json();
+        console.log(data);
+        if (data.success) {
+          setPortfolioData(data.data);
+        } else {
+          setError(data.message || 'Error fetching data');
+        }
+      } catch (error) {
+        setError('Error fetching portfolio data');
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!portfolioData) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className=" no-scrollbar h-screen overflow-auto scroll-smooth ">
-      <Navbar/>
+    <div className="no-scrollbar h-screen overflow-auto scroll-smooth">
+      <Navbar />
       <section id='home'>
-        <Intro/>
+        <Intro data={portfolioData.intro} />
       </section>
       <section id='about'>
-        <About/>
+        <About data={portfolioData.about} />
       </section>
       <section id='experiences'>
-        <Experiences/>
+        <Experiences data={portfolioData.experiences} />
       </section>
       <section id='projects'>
-        <Projects/>
+        <Projects data={portfolioData.projects} />
       </section>
       <section id='stats'>
-        <Stats/>
+        <Stats data={portfolioData.stats} />
       </section>
-      <section id='stats'>
-        <div><ContactMe/></div>
-        
+      <section id='contact'>
+        <ContactMe data={portfolioData.contact} />
       </section>
     </div>
   );
