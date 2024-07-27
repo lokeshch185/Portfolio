@@ -7,6 +7,7 @@ import Experiences from './pages/Home/Experiences';
 import Projects from './pages/Home/Projects';
 import Testimonials from './pages/Home/Testimonials';
 import Stats from './pages/Home/Stats';
+import ContactMe from './pages/Home/Contact';
 function App() {
   return (
     <div className=" no-scrollbar h-screen overflow-auto scroll-smooth ">
@@ -23,11 +24,15 @@ function App() {
       <section id='projects'>
         <Projects/>
       </section>
-      <section id='testimonials'>
+      {/* <section id='testimonials'>
         <Testimonials/>
-      </section>
+      </section> */}
       <section id='stats'>
         <Stats/>
+      </section>
+      <section id='stats'>
+        <div><ContactMe/></div>
+        
       </section>
     </div>
   );

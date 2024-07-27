@@ -3,7 +3,7 @@
 function Intro() {
 
     return (
-        <div className="h-screen bg-primary flex items-center justify-between px-10 py-5">
+        <div className="h-screen bg-[#030a11] flex items-center justify-between px-10 py-5">
             <div className="flex flex-col items-start justify-center gap-8 ">
                 <h1 className="text-white text-lg">Hi I'm</h1>
                 <h1 className="text-7xl sm:text-4xl drop-shadow-md font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-purple-500 to-purple-900 hover:scale-105  transform duration-200">

@@ -52,11 +52,11 @@ const Leetcode = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold mb-4">LeetCode Content</h2>
+    <div className="max-w-xl mx-auto ">
+      <h2 className="text-2xl font-semibold mb-4 text-white">LeetCode Content</h2>
       {userData ? (
         <div>
-          <h3 className="text-xl font-medium mb-2">{userData.username}</h3>
+          <h3 className="text-xl font-medium mb-2 text-white">{userData.username}</h3>
           <div className="space-y-4">
             {['All', 'Easy', 'Medium', 'Hard'].map((difficulty) => {
               const total = getTotalProblems(difficulty);
@@ -65,7 +65,7 @@ const Leetcode = () => {
 
               return (
                 <div key={difficulty} className="flex items-center space-x-4">
-                  <span className="w-20 font-medium text-black">{difficulty}</span>
+                  <span className="w-20 font-medium text-white">{difficulty}</span>
                   <div className="flex-1">
                     <div className="relative pt-1">
                       <div className="flex mb-2 items-center justify-between">

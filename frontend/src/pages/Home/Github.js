@@ -48,7 +48,7 @@ const Github = () => {
     };
 
     const Card = ({ heading, description, link }) => (
-        <div className="bg-[#354763] transform  p-2 duration-300 shadow-lg hover:shadow-2xl hover:scale-105 cursor-pointer h-48 ">
+        <div className="bg-[#354763] transform  p-2 duration-300 shadow-lg hover:shadow-2xl hover:scale-105 cursor-pointer min-h-48 ">
             <div className="p-4">
                 <h2 className="font-bold text-lg mb-2 text-white ">{heading}</h2>
                 <p className="text-sm text-slate-100">{description}</p>
@@ -67,7 +67,7 @@ const Github = () => {
     );
 
     return (
-        <div className="flex flex-col items-center max-h-screen px-4">
+        <div className="flex flex-col items-center  px-4">
 
             <div className="mx-auto  md:w-2/3 lg:w-1/2">
                 {/* <h3 className="text-2xl mb-4 text-center">Repositories</h3> */}
