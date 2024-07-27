@@ -32,7 +32,7 @@ function Experiences() {
                                     dateClassName="mx-2 text-white "
                               >
                                     <h1 className="pt-1 text-lg font-bold text-blue-950">{element.title}</h1>
-                                    <h6 className="text-blue-400 text-xs">{element.location}</h6>
+                                    <h6 className="text-blue-400 text-xs">{element.company}</h6>
                                 </VerticalTimelineElement>
                             );
                         })}
@@ -43,7 +43,7 @@ function Experiences() {
                         <div className="text-white p-5">
 
                             <h1 className="text-3xl font-bold">{selectedElement.title}</h1>
-                            <h2 className="text-md">{selectedElement.location}</h2>
+                            <h2 className="text-md">{selectedElement.company}</h2>
 
                             <p className="text-sm mt-10">{selectedElement.description}</p>
                             <div className="mt-10 flex justify-start">

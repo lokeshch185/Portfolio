@@ -1,4 +1,4 @@
-const { Intro, About, Project, Contact, Experience, Position } = require('../models/portfolioModel');
+const { Intro, About, Project, Social, Experience } = require('../models/portfolioModel');
 
 const getProfileData = async (req, res) => {
   try {
@@ -6,18 +6,16 @@ const getProfileData = async (req, res) => {
     const intros = await Intro.find();
     const abouts = await About.find();
     const projects = await Project.find();
-    const contacts = await Contact.find();
     const experiences = await Experience.find();
-    const positions = await Position.find();
+    const socials = await Social.find();
 
     // Send the fetched data in the response
     res.status(200).send({
       intro: intros[0] || {},
       about: abouts[0] || {},
       projects: projects || [],
-      contact: contacts[0] || {},
       experiences: experiences || [],
-      positions: positions || [],
+      socials: socials[0] || {},
     });
   } catch (error) {
     console.error('Error fetching profile data:', error);

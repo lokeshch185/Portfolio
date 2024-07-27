@@ -30,34 +30,26 @@ function Home() {
     fetchData();
   }, []);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!portfolioData) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div className="no-scrollbar h-screen overflow-auto scroll-smooth">
       <Navbar />
       <section id='home'>
-        <Intro data={portfolioData.intro} />
+        <Intro />
       </section>
       <section id='about'>
-        <About data={portfolioData.about} />
+        <About />
       </section>
       <section id='experiences'>
-        <Experiences data={portfolioData.experiences} />
+        <Experiences />
       </section>
       <section id='projects'>
-        <Projects data={portfolioData.projects} />
+        <Projects />
       </section>
       <section id='stats'>
-        <Stats data={portfolioData.stats} />
+        <Stats />
       </section>
       <section id='contact'>
-        <ContactMe data={portfolioData.contact} />
+        <ContactMe />
       </section>
     </div>
   );

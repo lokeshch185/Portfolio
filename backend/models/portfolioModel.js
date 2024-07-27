@@ -24,7 +24,7 @@ const introSchema = new mongoose.Schema({
 });
 
 const aboutSchema = new mongoose.Schema({
-  lottieURL: {
+  imgUrl: {
     type: String,
     required: true,
   },
@@ -36,10 +36,6 @@ const aboutSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  skills: {
-    type: Array,
-    required: true,
-  },
 });
 
 const experienceSchema = new mongoose.Schema({
@@ -47,7 +43,11 @@ const experienceSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  period: {
+  icon: {
+    type:String,
+    required:true,
+  },
+  date: {
     type: String,
     required: true,
   },
@@ -59,6 +59,11 @@ const experienceSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  skills: {
+    type: Array,
+    required: true,
+  },
+
 });
 
 const projectsSchema = new mongoose.Schema({
@@ -66,7 +71,11 @@ const projectsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: {
+  description1: {
+    type: String,
+    required: true,
+  },
+  description2: {
     type: String,
     required: true,
   },
@@ -78,52 +87,12 @@ const projectsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  technolgies: {
+  technology: {
     type: Array,
     required: true,
   },
 });
 
-
-const contactSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  mobile: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-});
-
-
-const positionsSchema = new mongoose.Schema({
-  position: {
-    type: String,
-    required: true,
-  },
-  department: {
-    type: String,
-    required: true,
-  },
-  start: {
-    type: Date,
-    required: true,
-  },
-  end: {
-    type: Date,
-    required: true,
-  },
-  
-});
 
 const socialSchema = new mongoose.Schema({
   leetcode: {
@@ -146,6 +115,22 @@ const socialSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: false,
+  },
+  mobile: {
+    type: String,
+    required: false,
+  },
+  address: {
+    type: String,
+    required: false,
+  }
 });
 
 module.exports = {
@@ -153,7 +138,5 @@ module.exports = {
   About: mongoose.model("abouts", aboutSchema),
   Experience: mongoose.model("experiences", experienceSchema),
   Project: mongoose.model("projects", projectsSchema),
-  Contact: mongoose.model("contacts", contactSchema),
-  Position : mongoose.model("positions", positionsSchema),
   Social : mongoose.model("social", socialSchema),
 };
