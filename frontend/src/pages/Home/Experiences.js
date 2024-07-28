@@ -1,5 +1,4 @@
 import { useState } from "react";
-import timelineElements from "./timelineElements";
 import {
     VerticalTimeline,
     VerticalTimelineElement,
@@ -7,15 +6,15 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import './Experiences.css'
 
-function Experiences() {
-    const [selectedElement, setSelectedElement] = useState(timelineElements[0]);
+function Experiences({data}) {
+    const [selectedElement, setSelectedElement] = useState(data[0]);
 
     return (
         <div className="min-h-screen w-screen sm:h-auto  bg-slate-900 ">
             <div className="flex w-full items-center sm:flex-col">
                 <div className="w-1/2 sm:w-full h-screen sm:h-auto no-scrollbar overflow-y-auto">
                     <VerticalTimeline className="  scale-90 sm:p-5 sm:scale-75  md:h-screen">
-                        {timelineElements.map((element) => {
+                        {data.map((element) => {
                             return (
                                 <VerticalTimelineElement
                                     key={element.id}

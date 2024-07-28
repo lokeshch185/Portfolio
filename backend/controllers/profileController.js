@@ -10,12 +10,19 @@ const getProfileData = async (req, res) => {
     const socials = await Social.find();
 
     // Send the fetched data in the response
-    res.status(200).send({
-      intro: intros[0] || {},
-      about: abouts[0] || {},
-      projects: projects || [],
-      experiences: experiences || [],
-      socials: socials[0] || {},
+    res.status(200).send(
+      
+      {
+      success:true,
+      data: {
+        intro: intros[0] || {},
+        about: abouts[0] || {},
+        projects: projects || [],
+        experiences: experiences || [],
+        socials: socials[0] || {},
+      },
+      message: "Data fetched successfull",
+
     });
   } catch (error) {
     console.error('Error fetching profile data:', error);

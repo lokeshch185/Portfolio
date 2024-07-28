@@ -1,4 +1,4 @@
-import data from './data.json';
+
 import { useState } from 'react';
 
 const Card = ({ image, heading, description1, onClick, link }) => (
@@ -27,7 +27,7 @@ const Card = ({ image, heading, description1, onClick, link }) => (
     </div>
 );
 
-const Projects = () => {
+const Projects = ({data}) => {
     const [selectedElement, setSelectedElement] = useState(data[0]);
 
     return (

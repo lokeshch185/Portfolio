@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ContactMe = () => {
+const ContactMe = ({data}) => {
+    console.log(data)
     return (
         <div className=" sm:h-auto lg:h-screen  bg-slate-950 flex justify-center items-center ">
             <div className="grid sm:grid-cols-1 lg:grid-cols-2 p-8  bg-white shadow-lg rounded-md mx-auto">
@@ -13,22 +14,22 @@ const ContactMe = () => {
                     <div className="mt-12">
                         <ul className="flex mt-4 space-x-4">
                             <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <a href={data.github} target="_blank" rel="noopener noreferrer">
                                     {/* Add Facebook icon or text here */}
                                 </a>
                             </li>
                             <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <a href={data.linkedin} target="_blank" rel="noopener noreferrer">
                                     {/* Add another social icon or text here */}
                                 </a>
                             </li>
                             <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <a href={data.leetcode} target="_blank" rel="noopener noreferrer">
                                     {/* Add another social icon or text here */}
                                 </a>
                             </li>
                             <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <a href={data.codeforces} target="_blank" rel="noopener noreferrer">
                                     {/* Add another social icon or text here */}
                                 </a>
                             </li>

@@ -9,18 +9,19 @@ import ContactMe from './Contact';
 
 function Home() {
   const [portfolioData, setPortfolioData] = useState(null);
+  console.log("hello "+ portfolioData)
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/get-portfolio-data');
-        const data = await response.json();
-        console.log(data);
-        if (data.success) {
-          setPortfolioData(data.data);
+        const res = await response.json();
+        console.log(res);
+        if (res.success) {
+          setPortfolioData(res.data);
         } else {
-          setError(data.message || 'Error fetching data');
+          setError(res.message || 'Error fetching data');
         }
       } catch (error) {
         setError('Error fetching portfolio data');
@@ -30,26 +31,34 @@ function Home() {
     fetchData();
   }, []);
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!portfolioData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="no-scrollbar h-screen overflow-auto scroll-smooth">
       <Navbar />
       <section id='home'>
-        <Intro />
+        <Intro data={portfolioData.intro} />
       </section>
       <section id='about'>
-        <About />
+        <About data={portfolioData.about} />
       </section>
       <section id='experiences'>
-        <Experiences />
+        <Experiences data={portfolioData.experiences} />
       </section>
       <section id='projects'>
-        <Projects />
+        <Projects data={portfolioData.projects} />
       </section>
       <section id='stats'>
-        <Stats />
+        <Stats/>
       </section>
       <section id='contact'>
-        <ContactMe />
+        <ContactMe data={portfolioData.socials} />
       </section>
     </div>
   );
