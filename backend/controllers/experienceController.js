@@ -1,5 +1,5 @@
 // controllers/experienceController.js
-const Experience = require('../models/portfolioModel');
+const {Experience} = require('../models/portfolioModel');
 
 const addExperience = async (req, res) => {
   try {

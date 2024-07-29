@@ -1,5 +1,5 @@
 
-const About = require('../models/portfolioModel');
+const {About} = require('../models/portfolioModel');
 
 const updateAbout = async (req, res) => {
   try {

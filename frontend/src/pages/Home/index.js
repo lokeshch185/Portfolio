@@ -9,8 +9,7 @@ import ContactMe from './Contact';
 
 function Home() {
   const [portfolioData, setPortfolioData] = useState(null);
-  console.log("hello "+ portfolioData)
-  const [error, setError] = useState(null);
+   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {

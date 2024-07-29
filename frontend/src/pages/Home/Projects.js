@@ -17,7 +17,7 @@ const Card = ({ image, heading, description1, onClick, link }) => (
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white px-3 py-1 block w-20 text-center hover:bg-[#1d4167] rounded-md bg-[#1c5490] text-pretty text-bold"
+                className="text-white px-3 py-1 block w-20 text-center hover:bg-[#1d4167] rounded-md bg-tertiary text-pretty text-bold"
             >
                 Visit
             </a>
@@ -48,7 +48,7 @@ const Projects = ({data}) => {
                                         href={selectedElement.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-white px-3 py-1 block w-20 text-center hover:bg-[#1d4167] rounded-md bg-[#1c5490] text-pretty text-bold"
+                                        className="text-white px-3 py-1 block w-20 text-center hover:bg-[#1d4167] rounded-md bg-tertiary text-pretty text-bold"
                                     >
                                         Visit
                                     </a>

@@ -11,6 +11,7 @@ const { updateContact } = require('../controllers/contactController');
 const { adminLogin } = require('../controllers/authController');
 const { getLeetcodeData } = require('../controllers/leetcodeController');
 const {getCodeforcesData} = require('../controllers/codeforcesController');
+const { updateSocial } = require('../controllers/socialController');
 
 // Get all portfolio data
 router.get('/get-portfolio-data', getProfileData);
@@ -43,7 +44,7 @@ router.post('/update-position', updatePosition);
 router.post('/delete-position', deletePosition);
 
 // Contact routes
-router.post('/update-contact', updateContact);
+router.post('/update-social', updateSocial);
 
 // Admin login
 router.post('/admin-login', adminLogin);

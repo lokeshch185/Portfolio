@@ -1,8 +1,9 @@
 // controllers/projectController.js
-const Project = require('../models/portfolioModel');
+const {Project} = require('../models/portfolioModel');
 
 const addProject = async (req, res) => {
   try {
+    console.log(req.body)
     const project = new Project(req.body);
     await project.save();
     res.status(200).send({

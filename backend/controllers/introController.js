@@ -1,25 +1,23 @@
-
-const Intro = require('../models/portfolioModel');
+const { Intro } = require('../models/portfolioModel');
 
 const updateIntro = async (req, res) => {
   try {
-    const intro = await Intro.findOneAndUpdate(
-      { _id: req.body._id },
+    const id = req.body._id;
+    const updatedIntro = await Intro.findByIdAndUpdate(
+      id,
       req.body,
-      { new: true }
+      { new: true}
     );
-    res.status(200).send({
-      data: intro,
+  res.status(200).send({
+      data: updatedIntro,
       success: true,
       message: "Intro updated successfully",
     });
   } catch (error) {
-    res.status(500).send(error);
+    console.error("Error updating intro:", error);
+    res.status(500).send({ success: false, message: "An error occurred", error: error.message });
   }
 };
-
-
-
 
 module.exports = {
   updateIntro,
